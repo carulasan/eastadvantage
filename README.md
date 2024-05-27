@@ -91,7 +91,7 @@ library the Django Rest Framework, key feature and tools included are the ff.
                     in the dropdown upper right corner.
 
 
-#### Step 5. Perform Crud Operation to Region and province
+#### Step 5. Perform Crud Operation
         
         Send request by clicking "Send" button
 
