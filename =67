@@ -1,0 +1,9 @@
+Collecting numpy
+  Using cached numpy-1.21.6-cp37-cp37m-win_amd64.whl.metadata (2.2 kB)
+Collecting wheel
+  Using cached wheel-0.42.0-py3-none-any.whl.metadata (2.2 kB)
+Requirement already satisfied: setuptools in d:\work\shakeys\.venv\lib\site-packages (39.0.1)
+Using cached numpy-1.21.6-cp37-cp37m-win_amd64.whl (14.0 MB)
+Using cached wheel-0.42.0-py3-none-any.whl (65 kB)
+Installing collected packages: wheel, numpy
+Successfully installed numpy-1.21.6 wheel-0.42.0

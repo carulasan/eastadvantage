@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: project.Dockerfile
+    ports:
+      - "9000:9000"
+    volumes:
+      - .:/app/

@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "7026f69b-a172-4062-aee2-67f601c56d7e",
+		"name": "addresses",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6267970",
+		"_collection_link": "https://galactic-capsule-367437.postman.co/workspace/MultiplePOS~70cd9594-1132-4d8c-a6b9-8cd30309b7b9/collection/6267970-7026f69b-a172-4062-aee2-67f601c56d7e?action=share&source=collection_link&creator=6267970"
+	},
+	"item": [
+		{
+			"name": "token",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"console.log(jsonData)\r",
+							"pm.environment.set('token', jsonData.access)"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"admin\",\r\n    \"password\" : \"Mammam\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/token/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/api/address_book/?city=City+of+Quezon+City",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"address_book",
+						""
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "City+of+Quezon+City"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \r\n        \"formatted_address\": \"SM City Dasmariñas\",\r\n        \"house_number\": \"SM City Dasmariñas\",\r\n        \"street\": \"Cito\",\r\n        \"city\": \"Dasma\",\r\n        \"long\": \"120.954141\",\r\n        \"lat\": \"14.301648\"\r\n        \r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/api/address_book/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"address_book",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/api/address_book/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"address_book",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/api/address_book/?city=Manila",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"address_book",
+						""
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "Manila"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve the addresses that are within a given distance and location coordinates.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9000/api/address_book/nearest/?distance=25&lat=14.445974&long=120.947372",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"api",
+						"address_book",
+						"nearest",
+						""
+					],
+					"query": [
+						{
+							"key": "distance",
+							"value": "25"
+						},
+						{
+							"key": "lat",
+							"value": "14.445974"
+						},
+						{
+							"key": "long",
+							"value": "120.947372"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
